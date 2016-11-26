@@ -20,7 +20,7 @@ public class DataBaseHelper {
     public StepsItem getSteps() {
         StepsItemDao stepsItemDao = daoSession.getStepsItemDao();
         List<StepsItem> stepsItems = stepsItemDao.queryBuilder().list();
-        return stepsItems.size() != 0 ? stepsItems.get(0) : null;
+        return stepsItems.size() != 0 ? stepsItems.get(stepsItems.size() - 1) : null;
     }
 
     public List<BPMItem> getBPMList() {

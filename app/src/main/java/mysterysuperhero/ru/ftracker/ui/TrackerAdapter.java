@@ -100,7 +100,7 @@ public class TrackerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             }
         } else {
             BPMViewHolder bpmViewHolder = (BPMViewHolder) holder;
-            BPMItem bpmItem = bpmList.get(position - 1);
+            BPMItem bpmItem = bpmList.get(bpmList.size() - position);
             bpmViewHolder.bpmTextView.setText(String.valueOf(bpmItem.getBpm()));
             Date date = new Date(bpmItem.getTime());
             SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yy HH:mm:ss");
