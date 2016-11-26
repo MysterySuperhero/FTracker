@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FTracker</string>
+    <string name="action_show_devices">Найденные устройства</string>
+    <string name="action_settings">Настройки</string>
+    <string name="action_connect">Подключиться</string>
+    <string name="action_bluetooth_on">Включить Bluetooth</string>
+    <string name="action_bluetooth_off">Выключить Bluetooth</string>
+    <string name="message_bluetooth_off">Bluetooth выключен</string>
+    <string name="message_bluetooth_on">Bluetooth включен</string>
+    <string name="message_bluettoth_already_on">Bluetooth уже включен</string>
+    <string name="message_bluetooth_is_turned_off">Bluetooth выключен</string>
+    <string name="title_paired_devices">Сопряженные устройства</string>
+    <string name="message_paired_devices_list_is_empty">Список сопряженных устройств пуст</string>
+    <string name="message_discover_started">Поиск...</string>
+    <string name="title_founded_devices">Найденные устройства</string>
+    <string name="message_searching">Идет поиск...</string>
+    <string name="message_connecting">Идет подключение...</string>
+    <string name="message_connected">Подключено</string>
+    <string name="message_connection_failed">Ошибка подключения</string>
+    <string name="message_connect_to_device">Пожалуйста, подключитесь к устройству</string>
+    <string name="message_empty_layout">Здесь пока ничего нет...</string>
+    <string name="textview_steps_count">Количество шагов:</string>
+    <string name="textview_heart_rate">Частота пульса:</string>
+    <string name="frequency">уд/мин</string>
+    <string name="textview_last_update">Последнее обновление:</string>
+</resources>
