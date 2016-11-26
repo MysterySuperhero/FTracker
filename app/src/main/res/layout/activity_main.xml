@@ -69,4 +69,11 @@
         app:layout_anchorGravity="bottom|end"
         app:srcCompat="@drawable/ic_heart" />
 
+    <FrameLayout
+        android:id="@+id/dialogLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
 </android.support.design.widget.CoordinatorLayout>

@@ -24,4 +24,5 @@
     <string name="textview_heart_rate">Частота пульса:</string>
     <string name="frequency">уд/мин</string>
     <string name="textview_last_update">Последнее обновление:</string>
+    <string name="connecting_textview">Подключение...</string>
 </resources>

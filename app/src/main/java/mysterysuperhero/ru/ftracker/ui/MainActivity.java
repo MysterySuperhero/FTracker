@@ -12,14 +12,18 @@ import android.os.Handler;
 import android.os.SystemClock;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -52,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private TrackerAdapter adapter;
     private SwipeRefreshLayout swipeRefreshLayout;
+    private FrameLayout dialogFrameLayout;
+    private AlertDialog alertDialog;
 
     private boolean updating = false;
 
@@ -165,6 +171,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        dialogFrameLayout = (FrameLayout) findViewById(R.id.dialogLayout);
+
         mBTAdapter = BluetoothAdapter.getDefaultAdapter(); // get a handle on the bluetooth radio
 
         if (mBTAdapter.isEnabled())
@@ -204,6 +212,8 @@ public class MainActivity extends AppCompatActivity {
                         ViewHelper.showSnackBar(findViewById(R.id.scrollView),
                                 getResources().getString(R.string.message_connection_failed));
                     }
+
+                    if (alertDialog != null) alertDialog.cancel();
                 }
             }
         };
@@ -345,6 +355,15 @@ public class MainActivity extends AppCompatActivity {
 
         final String address = founded ? mFoundedDevices.get(index).getAddress() : mPairedDevices.get(index).getAddress();
         final String name = founded ? mFoundedDevices.get(index).getName() : mPairedDevices.get(index).getName();
+
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = this.getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.dialog_connecting, null);
+        dialogBuilder.setView(dialogView);
+        dialogBuilder.setCancelable(false);
+
+        alertDialog = dialogBuilder.create();
+        alertDialog.show();
 
         // Spawn a new thread to avoid blocking the GUI one
         new Thread() {

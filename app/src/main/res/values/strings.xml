@@ -112,4 +112,5 @@
     <string name="textview_heart_rate">Heart rate:</string>
     <string name="frequency">bpm</string>
     <string name="textview_last_update">Last update:</string>
+    <string name="connecting_textview">Connecting...</string>
 </resources>
